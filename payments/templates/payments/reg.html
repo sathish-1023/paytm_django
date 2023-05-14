@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Code Haters || sathish</title>
+  <style type="text/css">
+    body {
+      color: #df7326;
+      background-color: #8d93af;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #86a2c4, #8811c5);
+      color: rgb(239, 47, 47);
+      font-weight: bold;
+      line-height: 90px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 22%;
+    }
+
+    .form-control {
+      border-radius: 4.5rem;
+    }
+
+    .btnSubmit {
+     margin:1% 1% 2% 1%;
+      border: none;
+      border-radius: 1.5rem;
+      padding: 2%;
+      width: 30%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  
+  
+
+
+
+  <!--- signup page for admin by admin(sumit)  ---------->
+  <form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Add New Admin To Hospital</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-sm-10">
+              <div class="form-group">
+               First Name :  {% render_field form.first_name class="form-control" placeholder="First Name" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.username class="form-control" placeholder="Username" %}
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form.last_name class="form-control" placeholder="Last Name" %}
+              </div>
+              <div class="form-group">
+                {% render_field form.password class="form-control" placeholder="Password" %}
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btnSubmit">Submit</button>
+          <div class="text-center">Already have an account? <a href="/pay">Login here</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+  
+
+  
+</body>
+
+</html>
